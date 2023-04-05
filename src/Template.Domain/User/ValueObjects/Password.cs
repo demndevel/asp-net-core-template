@@ -6,11 +6,8 @@ public class Password
 
     public Password(string value)
     {
-        if (value.Length is <= 100 and >= 8)
-        {
-            Value = value;
-        }
-
-        throw new Exceptions.InvalidPasswordLengthException();
+        if (value.Length is not (<= 100 and >= 8))
+            throw new Exceptions.InvalidPasswordLengthException();
+        Value = value;
     }
 }

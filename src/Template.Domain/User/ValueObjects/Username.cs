@@ -6,11 +6,8 @@ public class Username
 
     public Username(string value)
     {
-        if (value.Length is <= 100 and >= 3)
-        {
-            Value = value;
-        }
-
-        throw new Exceptions.InvalidUsernameLengthException();
+        if (value.Length is not (<= 100 and >= 3))
+            throw new Exceptions.InvalidUsernameLengthException();
+        Value = value;
     }
 }

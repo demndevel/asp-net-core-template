@@ -12,9 +12,13 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
         builder.HasKey(u => u.Id);
         
         builder.Property(u => u.Username)
-            .HasConversion(u => u.Value, value => new Username(value));
+            .HasConversion(
+                u => u.Value, 
+                value => new Username(value));
         
         builder.Property(u => u.Password)
-            .HasConversion(u => u.Value, value => new Password(value));
+            .HasConversion(
+                p => p.Value, 
+                value => new Password(value));
     }
 }

@@ -8,9 +8,9 @@ public class User
     public Username Username { get; }
     public Password Password { get; }
 
-    public User(string password, string username)
+    public User(Password password, Username username)
     {
-        Password = new Password(password);
-        Username = new Username(username);
+        Password = password;
+        Username = username;
     }
 }

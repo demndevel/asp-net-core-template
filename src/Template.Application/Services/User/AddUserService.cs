@@ -1,4 +1,5 @@
 using Template.Application.Interfaces;
+using Template.Domain.User.ValueObjects;
 
 namespace Template.Application.Services.User;
 
@@ -13,7 +14,11 @@ public class AddUserService : IAddUserService
 
     public async Task<int> AddUser(AddUserDto dto)
     {
-        var user = new Domain.User.User(dto.Username, dto.Password);
+        var username = new Username(dto.Username);
+        var password = new Password(dto.Password);
+        var user = new Domain.User.User(
+            password: password, 
+            username: username);
         
         await _db.Users.AddAsync(user);
         await _db.SaveChangesAsync();
