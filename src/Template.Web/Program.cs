@@ -1,5 +1,15 @@
+using Microsoft.EntityFrameworkCore;
+using Template.Application;
+using Template.Application.Interfaces;
+using Template.Infrastructure.Persistence;
+
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddApplication();
+builder.Services.AddDbContext<IAppDbContext, AppDbContext>(builder =>
+{
+    builder.UseSqlite(connectionString: ""); // TODO
+});
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
