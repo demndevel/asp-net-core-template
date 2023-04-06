@@ -1,13 +1,13 @@
-using Template.Application.Interfaces;
+using Template.Application.Persistence;
 using Template.Domain.User.ValueObjects;
 
 namespace Template.Application.Services.User;
 
 public class AddUserService : IAddUserService
 {
-    private readonly IAppDbContext _db;
+    private readonly AppDbContext _db;
 
-    public AddUserService(IAppDbContext db)
+    public AddUserService(AppDbContext db)
     {
         _db = db;
     }

@@ -1,11 +1,10 @@
 using System.Reflection;
 using Microsoft.EntityFrameworkCore;
-using Template.Application.Interfaces;
 using Template.Domain.User;
 
-namespace Template.Infrastructure.Persistence;
+namespace Template.Application.Persistence;
 
-public class AppDbContext : DbContext, IAppDbContext
+public class AppDbContext : DbContext
 {
     public DbSet<User> Users { get; set; } = null!;
 

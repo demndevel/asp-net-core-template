@@ -1,12 +1,11 @@
 using Microsoft.EntityFrameworkCore;
 using Template.Application;
-using Template.Application.Interfaces;
-using Template.Infrastructure.Persistence;
+using Template.Application.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddApplication();
-builder.Services.AddDbContext<IAppDbContext, AppDbContext>(builder =>
+builder.Services.AddDbContext<AppDbContext>(builder =>
 {
     builder.UseSqlite(connectionString: ""); // TODO
 });

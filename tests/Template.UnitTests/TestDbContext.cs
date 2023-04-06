@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using Template.Infrastructure.Persistence;
+using Template.Application.Persistence;
 
 namespace Template.UnitTests;
 

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Template.Domain.User;
 using Template.Domain.User.ValueObjects;
 
-namespace Template.Infrastructure.Persistence.Configurations;
+namespace Template.Application.Persistence.Configurations;
 
 public class UserConfiguration : IEntityTypeConfiguration<User>
 {
